@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/views/pages/HomePage/main.dart';
 import 'package:hello_world/views/pages/ReadingPage/main.dart';
 
-
 void main() {
   runApp(MyApp());
 }
