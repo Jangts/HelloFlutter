@@ -124,7 +124,7 @@ class _WordItemState extends State<WordItem> {
         },
         child: Container(
             height: 42,
-            margin: EdgeInsets.fromLTRB(0, 0, 8, 8),
+            margin: EdgeInsets.fromLTRB(4, 4, 4, 4),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -169,11 +169,7 @@ Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big
 
   List<WordItem> buildParagraph(String texts) {
     int index = 0;
-    return texts.replaceAllMapped(RegExp(r"(,|;|!|\.|\?)+"), (Match match){
-//      print(match[0]);
-//      print(match[1]);
-      return match[1] + ' ';
-    }).split(RegExp(r"\s+")).map((text) {
+    return texts.replaceAllMapped(RegExp(r"(,|;|!|\.|\?)+"), (Match m)=>"${m[1]} ").split(RegExp(r"\s+")).map((text) {
 //      print(text);
       return WordItem(index++, text.replaceAll("&nbsp;", " "));
     }).toList();
