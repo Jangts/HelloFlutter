@@ -37,19 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run";
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -152,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // String article = "My name is Ivan";
   String article = '''
 My name is Ivan, I am a Chineses, and I am come from China.
-Now I stay in Kuala&nbsp;Lumpur. It's the capital city of Malaysia which is a southeast asian nation.
+Now I stay in Kuala&&&Lumpur. It's the capital city of Malaysia which is a southeast asian nation.
 Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big pile of snow. He puts a big snowball on top. He adds a scarf and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In the evening, James opens the door. What does he see? The snowman is moving! James invites him in. The snowman has never been inside a house. He says hello to the cat. He plays with paper towels.A moment later, the snowman takes James's hand and goes out.They go up, up, up into the air! They are flying! What a wonderful night!The next morning, James jumps out of bed. He runs to the door.He wants to thank the snowman. But he's gone.''';
 
   List<Paragraph> paragraphs = [];
@@ -169,9 +157,9 @@ Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big
 
   List<WordItem> buildParagraph(String texts) {
     int index = 0;
-    return texts.replaceAllMapped(RegExp(r"(,|;|!|\.|\?)+"), (Match m)=>"${m[1]} ").split(RegExp(r"\s+")).map((text) {
+    return texts.replaceAllMapped(RegExp(r"(\w)(,|;|!|\.|\?)+"), (Match m)=>"${m[1]}${m[2]} ").split(RegExp(r"\s+")).map((text) {
 //      print(text);
-      return WordItem(index++, text.replaceAll("&nbsp;", " "));
+      return WordItem(index++, text.replaceAll("&&&", " "));
     }).toList();
   }
 
