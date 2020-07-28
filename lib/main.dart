@@ -5,6 +5,7 @@ Map _dict = {
   "name": ["名字"],
   "Ivan": ["伊凡"],
   "I": ["我, 老子, 第一人称自称"],
+  "he": ["他"],
   "Chineses": ["中国人"],
   "come": ["来"],
   "from": ["自"],
@@ -88,12 +89,11 @@ class Paragraph extends StatelessWidget {
 class WordItem extends StatefulWidget {
   int index = 0;
   String en = "";
-  List<String> cn = [];
+  List<String> cn = [""];
   WordItem(this.index, this.en) {
-    String le = en.replaceAll(RegExp(r"[^\w\s]+"), "");
+    String le = en.replaceFirst(RegExp(r"('s|')$"), "").replaceAll(RegExp(r"[^\w\s]+"), "");
     String ll = le.toLowerCase();
-    // print(le);
-    // print(en);
+//    print("${en} -> ${le}");
 
     if (_dict[le] != null) {
       cn = _dict[le] as List<String>;
@@ -169,7 +169,12 @@ Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big
 
   List<WordItem> buildParagraph(String texts) {
     int index = 0;
-    return texts.split(RegExp(r"\s+")).map((text) {
+    return texts.replaceAllMapped(RegExp(r"(,|;|!|\.|\?)+"), (Match match){
+//      print(match[0]);
+//      print(match[1]);
+      return match[1] + ' ';
+    }).split(RegExp(r"\s+")).map((text) {
+//      print(text);
       return WordItem(index++, text.replaceAll("&nbsp;", " "));
     }).toList();
   }
