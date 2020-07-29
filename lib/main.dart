@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/views/pages/AboutPage/main.dart';
 import 'package:hello_world/views/pages/HomePage/main.dart';
+import 'package:hello_world/views/pages/HttpClientPage/main.dart';
 import 'package:hello_world/views/pages/ReadingPage/main.dart';
 import 'package:hello_world/views/pages/SQLiteTestPage/main.dart';
 
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           'router/reading': (_) => new ReadingPage(title: 'Reading Page'),
           'router/about': (_) => new AboutPage(),
-          'router/sqlite': (_) => new SQLiteTestPage(title: 'SQLite Test Page')
+          'router/sqlite': (_) => new SQLiteTestPage(title: 'SQLite Test Page'),
+          'router/http': (_) => new HttpClientPage()
         });
   }
 }
