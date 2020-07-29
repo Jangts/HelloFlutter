@@ -26,6 +26,11 @@ class HomePage extends StatelessWidget {
             child: Text("关于页面"),
             onPressed: () {
               Navigator.of(context).pushNamed('router/about');
+            }),
+        RaisedButton(
+            child: Text("SQLite"),
+            onPressed: () {
+              Navigator.of(context).pushNamed('router/sqlite');
             })
       ])),
     );
