@@ -15,14 +15,17 @@ class HomePage extends StatelessWidget {
         RaisedButton(
             child: Text("开始阅读文章1"),
             onPressed: () {
-              Navigator.of(context).pushNamed('router/reading',
-                  arguments: 0); //这里一定要保证跳页的路由路径跟上面注册的路径一致
+              Navigator.of(context).pushNamed('router/reading', arguments: 0);
             }),
         RaisedButton(
             child: Text("开始阅读文章2"),
             onPressed: () {
-              Navigator.of(context).pushNamed('router/reading',
-                  arguments: 1); //这里一定要保证跳页的路由路径跟上面注册的路径一致
+              Navigator.pushNamed(context, 'router/reading', arguments: 1);
+            }),
+        RaisedButton(
+            child: Text("关于页面"),
+            onPressed: () {
+              Navigator.of(context).pushNamed('router/about');
             })
       ])),
     );

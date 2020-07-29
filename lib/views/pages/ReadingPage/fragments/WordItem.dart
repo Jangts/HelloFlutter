@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Map _dict = {
+Map<String, List<String>> _dict = <String, List<String>>{
   "my": ["我的"],
   "name": ["名字"],
   "Ivan": ["伊凡"],
@@ -33,14 +33,16 @@ class WordItem extends StatefulWidget {
   String en = "";
   List<String> cn = [""];
   WordItem(this.index, this.en) {
-    String le = en.replaceFirst(RegExp(r"('s|')$"), "").replaceAll(RegExp(r"[^\w\s]+"), "");
+    String le = en
+        .replaceFirst(RegExp(r"('s|')$"), "")
+        .replaceAll(RegExp(r"[^\w\s]+"), "");
     String ll = le.toLowerCase();
 //    print("${en} -> ${le}");
 
     if (_dict[le] != null) {
-      cn = _dict[le] as List<String>;
+      cn = _dict[le];
     } else if (_dict[ll] != null) {
-      cn = _dict[ll] as List<String>;
+      cn = _dict[ll];
     }
   }
 

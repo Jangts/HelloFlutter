@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/views/pages/AboutPage/main.dart';
 import 'package:hello_world/views/pages/HomePage/main.dart';
 import 'package:hello_world/views/pages/ReadingPage/main.dart';
 
@@ -11,15 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomePage(title: 'Home Page'),
-      routes: <String, WidgetBuilder>{
-        'router/reading': (_) => new ReadingPage(title: 'Reading Page')
-      }
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: HomePage(title: 'Home Page'),
+        routes: <String, WidgetBuilder>{
+          'router/reading': (_) => new ReadingPage(title: 'Reading Page'),
+          'router/about': (_) => new AboutPage()
+        });
   }
 }

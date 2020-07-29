@@ -12,7 +12,7 @@ class ReadingPage extends StatefulWidget {
 }
 
 class _ReadingPageState extends State<ReadingPage> {
-  List<String> articles = [
+  List<String> articles = <String>[
     '''My name is Ivan, I am a Chineses, and I am come from China.
 Now I stay in Kuala&&&Lumpur. It's the capital city of Malaysia which is a southeast asian nation.
 Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big pile of snow. He puts a big snowball on top. He adds a scarf and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In the evening, James opens the door. What does he see? The snowman is moving! James invites him in. The snowman has never been inside a house.

@@ -5,7 +5,7 @@ import 'package:hello_world/views/pages/ReadingPage/fragments/WordItem.dart';
 // ignore: must_be_immutable
 class Paragraph extends StatelessWidget {
   int index = 0;
-  List<WordItem> words = [];
+  List<WordItem> words = <WordItem>[];
   Paragraph(this.index, this.words);
 
   @override
