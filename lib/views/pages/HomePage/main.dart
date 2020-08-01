@@ -23,17 +23,17 @@ class HomePage extends StatelessWidget {
               Navigator.pushNamed(context, 'router/reading', arguments: 1);
             }),
         RaisedButton(
-            child: Text("关于页面"),
+            child: Text("Webview测试"),
             onPressed: () {
               Navigator.of(context).pushNamed('router/about');
             }),
         RaisedButton(
-            child: Text("SQLite"),
+            child: Text("本地SQLite数据库测试"),
             onPressed: () {
               Navigator.of(context).pushNamed('router/sqlite');
             }),
         RaisedButton(
-            child: Text("网络测试"),
+            child: Text("Http网络请求测试"),
             onPressed: () {
               Navigator.of(context).pushNamed('router/http');
             })
